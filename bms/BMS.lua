@@ -107,6 +107,7 @@ BMS.detectKeymodeBMS = function(self)
 		for i = 8, 14 do
 			if ie[i] then
 				if ce["27"] then
+					-- 14K2S2P
 					self.mode = 39
 					return
 				end
@@ -115,10 +116,12 @@ BMS.detectKeymodeBMS = function(self)
 			end
 		end
 		if ce["17"] then
+			-- 7K1S1P
 			self.mode = 32
 			return
 		end
 		if ce["26"] then
+			-- 7K1S1P(dual scratch)
 			self.mode = 22
 			return
 		end
@@ -134,6 +137,7 @@ BMS.detectKeymodeBMS = function(self)
 		for i = 8, 12 do
 			if ie[i] then
 				if ce["27"] then
+					-- 10K2S2P
 					self.mode = 35
 					return
 				end
@@ -142,10 +146,12 @@ BMS.detectKeymodeBMS = function(self)
 			end
 		end
 		if ce["17"] then
+			-- 5K1S1P
 			self.mode = 30
 			return
 		end
 		if ce["26"] then
+			-- 5K1S1P(dual scratch)
 			self.mode = 20
 			return
 		end
