@@ -190,7 +190,7 @@ MetaData.fillData = function(self)
 			hash			= "",
 			index			= noteChart.index,
 			format			= "mid",
-			title			= EncodingConverter:fix(mid.title),
+			title			= EncodingConverter:fix(importer.title),
 			artist			= "",
 			source			= "",
 			tags			= "",
@@ -201,11 +201,11 @@ MetaData.fillData = function(self)
 			stagePath		= "",
 			previewTime		= 0,
 			noteCount		= importer.noteCount,
-			length			= importer.length,
+			length			= mid.length,
 			bpm				= mid.bpm,
 			inputMode		= "88key",
-			minTime         = importer.minTime,
-			maxTime         = importer.maxTime
+			minTime         = mid.minTime,
+			maxTime         = mid.maxTime
 		})
 	end
 end

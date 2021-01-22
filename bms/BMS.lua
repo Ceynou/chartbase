@@ -100,73 +100,62 @@ BMS.detectKeymode = function(self)
 end
 
 BMS.detectKeymodeBMS = function(self)
-	local ie = self.inputExisting
 	local ce = self.channelExisting
-		
-	if ie[6] or ie[7] then
-		for i = 8, 14 do
-			if ie[i] then
-				if ce["27"] then
-					-- 14K2S2P
-					self.mode = 39
-					return
-				end
-				self.mode = 14
-				return
-			end
-		end
-		if ce["17"] then
-			-- 7K1S1P
-			self.mode = 32
+	if ce["29"] or ce["69"] then
+		if ce["27"] or ce["67"] then
+			self.mode = 44
 			return
 		end
-		if ce["26"] then
-			-- 7K1S1P(dual scratch)
-			self.mode = 22
+		self.mode = 14
+		return
+	elseif ce["25"] or ce["65"] then
+		if ce["27"] or ce["67"] then
+			self.mode = 40
+			return
+		end
+		self.mode = 10
+		return
+	elseif ce["19"] or ce["59"] then
+		if ce["17"] or ce["57"] then
+			self.mode = 37
+			return
+		elseif ce["26"] or ce["66"] then
+			self.mode = 27
 			return
 		end
 		self.mode = 7
-	else
-		
-		if ie[13] or ie[14] then
-			self.mode = 14
+		return
+	elseif ce["15"] or ce["55"] then
+		if ce["17"] or ce["57"] then
+			self.mode = 35
 			return
-		end
-	
-		-- not sure if useful, I guess I should leave it if it's better to every possibilities
-		for i = 8, 12 do
-			if ie[i] then
-				if ce["27"] then
-					-- 10K2S2P
-					self.mode = 35
-					return
-				end
-				self.mode = 10
-				return
-			end
-		end
-		if ce["17"] then
-			-- 5K1S1P
-			self.mode = 30
-			return
-		end
-		if ce["26"] then
-			-- 5K1S1P(dual scratch)
-			self.mode = 20
+		elseif ce["26"] or ce["66"] then
+			self.mode = 25
 			return
 		end
 		self.mode = 5
 	end
+	-- return nothing here?
 end
 
 BMS.detectKeymodePMS = function(self)
 	local ce = self.channelExisting
-	
-	if ce["17"] or ce["57"] or ce["27"] or ce["67"] then
-		self.mode = 18
+	if ce["27"] or ce["67"] then
+		self.mode = 78
 		return
+	elseif ce["17"] or ce["57"] then
+		self.mode = 69
+		return
+	elseif ce["25"] or ce["65"] then
+		self.mode = 59
+		return
+	elseif ce["23"] or ce["63"] then
+		self.mode = 55
+		return
+	elseif ce["13"] or ce["53"] then
+		self.mode = 53
 	end
-	self.mode = 9
+	
 end
 
 BMS.updateMode = function(self, channel)
@@ -181,12 +170,8 @@ BMS.updateModeBMS = function(self, channel)
     self.channelExisting[channel] = true
 
     local channelInfo = enums.ChannelEnum[channel]
-    
-    local inputExisting = self.inputExisting
     if channelInfo and channelInfo.name == "Note" and not self.pms and not self.pmsdp then
-        if channelInfo.inputType == "key" then
-            inputExisting[channelInfo.inputIndex] = true
-        end
+        channelExisting[channel] = true
     end
 end
 

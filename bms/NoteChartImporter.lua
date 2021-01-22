@@ -68,31 +68,27 @@ NoteChartImporter.setInputMode = function(self)
 	elseif mode == 14 then
 		self.noteChart.inputMode:setInputCount("scratch", 2)
 		self.ChannelEnum = enums.ChannelEnum
-	elseif mode == 9 then
+	elseif mode == 59 or mode == 55 or mode == 53 then
+		self.noteChart.inputMode:setInputCount("key", mode-50)
 		self.ChannelEnum = enums.ChannelEnum9Keys
-	elseif mode == 18 then
+	elseif mode == 69 or mode == 78 then
+		self.noteChart.inputMode:setInputCount("key", mode-60)
 		self.ChannelEnum = enums.ChannelEnum18Keys
-	end
-	
-	if mode == 20 or mode == 22 then
-		self.noteChart.inputMode:setInputCount("key", mode-15)
+	elseif mode == 25 or mode == 27 then
+		self.noteChart.inputMode:setInputCount("key", mode-20)
 		self.noteChart.inputMode:setInputCount("scratch", 1)
 		self.noteChart.inputMode:setInputCount("pedal", 1)
 		self.ChannelEnum = enums.ChannelEnumDsc
-	end
-	
-	if mode == 30 or mode == 32 or mode == 35 or mode == 39 then
-		self.noteChart.inputMode:setInputCount("key", mode-25)
-		if mode == 30 or mode == 32 then
-			self.noteChart.inputMode:setInputCount("scratch", 1)
-			self.noteChart.inputMode:setInputCount("pedal", 1)
-			self.ChannelEnum = enums.ChannelEnumPedal
-		elseif mode == 35 or mode == 39 then
-			self.noteChart.inputMode:setInputCount("scratch", 2)
-			self.noteChart.inputMode:setInputCount("pedal", 2)
-			self.ChannelEnum = enums.ChannelEnumPedal
-		end
-
+	elseif mode == 35 or mode == 37 then
+		self.noteChart.inputMode:setInputCount("key", mode-30)
+		self.noteChart.inputMode:setInputCount("scratch", 1)
+		self.noteChart.inputMode:setInputCount("pedal", 1)
+		self.ChannelEnum = enums.ChannelEnumPedal5Keys
+	elseif mode == 40 or mode == 44 then
+		self.noteChart.inputMode:setInputCount("key", mode-30)
+		self.noteChart.inputMode:setInputCount("scratch", 2)
+		self.noteChart.inputMode:setInputCount("pedal", 2)
+		self.ChannelEnum = enums.ChannelEnumPedal
 	end
 end
 
