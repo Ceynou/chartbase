@@ -135,7 +135,6 @@ BMS.detectKeymodeBMS = function(self)
 		end
 		self.mode = 5
 	end
-	-- return nothing here?
 end
 
 BMS.detectKeymodePMS = function(self)
@@ -155,7 +154,6 @@ BMS.detectKeymodePMS = function(self)
 	elseif ce["13"] or ce["53"] then
 		self.mode = 53
 	end
-	
 end
 
 BMS.updateMode = function(self, channel)
@@ -166,8 +164,8 @@ BMS.updateMode = function(self, channel)
 	end
 end
 
-BMS.updateModeBMS = function(self, channel)
-    self.channelExisting[channel] = true
+BMS.updateModeBMS = function(self, channel)	
+	local channelExisting = self.channelExisting
 
     local channelInfo = enums.ChannelEnum[channel]
     if channelInfo and channelInfo.name == "Note" and not self.pms and not self.pmsdp then

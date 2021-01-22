@@ -56,6 +56,7 @@ NoteChartImporter.setInputMode = function(self)
 	self.noteChart.inputMode:setInputCount("key", mode)
 	
 	self.ChannelEnum = enums.ChannelEnum
+	-- could add an "if no scratch..." somewhere
 	if mode == 5 then
 		self.noteChart.inputMode:setInputCount("scratch", 1)
 		self.ChannelEnum = enums.ChannelEnum5Keys
@@ -68,9 +69,12 @@ NoteChartImporter.setInputMode = function(self)
 	elseif mode == 14 then
 		self.noteChart.inputMode:setInputCount("scratch", 2)
 		self.ChannelEnum = enums.ChannelEnum
-	elseif mode == 59 or mode == 55 or mode == 53 then
+	elseif mode == 59 or mode == 53 then
 		self.noteChart.inputMode:setInputCount("key", mode-50)
 		self.ChannelEnum = enums.ChannelEnum9Keys
+	elseif mode == 55 then
+		self.noteChart.inputMode:setInputCount("key", mode-50)
+		self.ChannelEnum = enums.ChannelEnumPMS5Keys
 	elseif mode == 69 or mode == 78 then
 		self.noteChart.inputMode:setInputCount("key", mode-60)
 		self.ChannelEnum = enums.ChannelEnum18Keys

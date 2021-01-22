@@ -119,6 +119,20 @@ enums.ChannelEnum9Keys = {
 	["65"] = {name = "Note", inputType = "key", inputIndex = 9, long = true},
 }
 
+enums.ChannelEnumPMS5Keys = {
+	["13"] = {name = "Note", inputType = "key", inputIndex = 1},
+	["14"] = {name = "Note", inputType = "key", inputIndex = 2},
+	["15"] = {name = "Note", inputType = "key", inputIndex = 3},
+	["22"] = {name = "Note", inputType = "key", inputIndex = 4},
+	["23"] = {name = "Note", inputType = "key", inputIndex = 5},
+	
+	["53"] = {name = "Note", inputType = "key", inputIndex = 1, long = true},
+	["54"] = {name = "Note", inputType = "key", inputIndex = 2, long = true},
+	["55"] = {name = "Note", inputType = "key", inputIndex = 3, long = true},
+	["62"] = {name = "Note", inputType = "key", inputIndex = 4, long = true},
+	["63"] = {name = "Note", inputType = "key", inputIndex = 5, long = true},
+}
+
 enums.ChannelEnum18Keys = {
 	["11"] = {name = "Note", inputType = "key", inputIndex = 1},
 	["12"] = {name = "Note", inputType = "key", inputIndex = 2},
@@ -195,7 +209,7 @@ enums.ChannelEnumPedal = {
 	["19"] = {name = "Note", inputType = "key", inputIndex = 7},
 
 	["16"] = {name = "Note", inputType = "scratch", inputIndex = 1},
-	["27"] = {name = "Note", inputType = "pedal", inputIndex = 1},
+	["17"] = {name = "Note", inputType = "pedal", inputIndex = 1},
 
 	["51"] = {name = "Note", inputType = "key", inputIndex = 1, long = true},
 	["52"] = {name = "Note", inputType = "key", inputIndex = 2, long = true},
@@ -206,7 +220,7 @@ enums.ChannelEnumPedal = {
 	["59"] = {name = "Note", inputType = "key", inputIndex = 7, long = true},
 
 	["56"] = {name = "Note", inputType = "scratch", inputIndex = 1, long = true},
-	["67"] = {name = "Note", inputType = "pedal", inputIndex = 1, long = true},
+	["57"] = {name = "Note", inputType = "pedal", inputIndex = 1, long = true},
 	
 	["21"] = {name = "Note", inputType = "key", inputIndex = 8},
 	["22"] = {name = "Note", inputType = "key", inputIndex = 9},
@@ -239,7 +253,7 @@ enums.ChannelEnumPedal5Keys = {
 	["15"] = {name = "Note", inputType = "key", inputIndex = 5},
 
 	["16"] = {name = "Note", inputType = "scratch", inputIndex = 1},
-	["27"] = {name = "Note", inputType = "pedal", inputIndex = 1},
+	["17"] = {name = "Note", inputType = "pedal", inputIndex = 1},
 
 	["51"] = {name = "Note", inputType = "key", inputIndex = 1, long = true},
 	["52"] = {name = "Note", inputType = "key", inputIndex = 2, long = true},
@@ -248,7 +262,7 @@ enums.ChannelEnumPedal5Keys = {
 	["55"] = {name = "Note", inputType = "key", inputIndex = 5, long = true},
 
 	["56"] = {name = "Note", inputType = "scratch", inputIndex = 1, long = true},
-	["67"] = {name = "Note", inputType = "pedal", inputIndex = 1, long = true},
+	["57"] = {name = "Note", inputType = "pedal", inputIndex = 1, long = true},
 	
 	["21"] = {name = "Note", inputType = "key", inputIndex = 6},
 	["22"] = {name = "Note", inputType = "key", inputIndex = 7},
